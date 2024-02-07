@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="\static\css\main.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Выберите приз:</h1>
+    {% for i in sl.keys() %}
+    <form method="post" action="/create_field">
+        <div class="setpprize">
+        <label class="setprizetext">{{sl[i][1]}}</label>
+        <button class="image-button knopka_with_price" type="submit" name="set_prize" value="{{i}}"><img class="image" src="static/prizes/{{sl[i][0]}}"></button>
+        <label>{{sl[i][2]}}</label>
+        </div>
+    </form>
+    {% endfor %}
+</body>
+
+</html>
